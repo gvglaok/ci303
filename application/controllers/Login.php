@@ -4,7 +4,9 @@ class Login extends CI_Controller {
 
 	public function index()
 	{
-		$this->load->view('page-login', TRUE);
+		$mes='';
+		$data = array('mes' => $mes);
+		$this->load->view('page-login',$data);
 	}
 
 	public function logining()
@@ -17,7 +19,15 @@ class Login extends CI_Controller {
 		{
 			echo "success!!!";
 		} else {
-			echo "error!!!";
+			//echo "error!!!";
+			$mes='<div class="alert alert-warning alert-dismissible" role="alert" >
+					  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+					  <span aria-hidden="true">&times;</span>
+					  </button>
+					  <strong>Warning!</strong> Better check yourself, you not looking too good.
+					</div>';
+			$data = array('mes' => $mes);
+			$this->load->view('page-login', $data);
 		}
 	}
 

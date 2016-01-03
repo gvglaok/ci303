@@ -79,10 +79,11 @@
 							</div>
 							<div class="panel-body">
 								<form action='login/logining' method="post">
-									<div class="form-group has-error">
+
+									<div class="form-group">
 										<label>Username</label>
 										<div class="input-group input-group-icon">
-											<input id="username" name="username" type="text" class="form-control bk-noradius" />
+											<input id="username" name="username" type="text" class="form-control bk-noradius" required/>
 											<span class="input-group-addon">
 												<span class="icon">
 													<i class="fa fa-user"></i>
@@ -94,7 +95,7 @@
 									<div class="form-group">
 										<label>Password</label>									
 										<div class="input-group input-group-icon">
-											<input id="pwd" name="pwd" type="password" class="form-control bk-noradius" />
+											<input id="pwd" name="pwd" type="password" class="form-control bk-noradius" required/>
 											<span class="input-group-addon">
 												<span class="icon">
 													<i class="fa fa-lock"></i>
@@ -103,6 +104,7 @@
 										</div>
 									</div>
 									<br />
+
 									<div class="row">
 										<div class="col-sm-8">
 											<div class="checkbox-custom checkbox-default bk-margin-bottom-10">
@@ -116,17 +118,18 @@
 										</div>
 									</div>
 									<br />
+									<?php echo !empty($mes) ? "nothing" : $mes;  ?>
 									<div class="text-with-hr">
 										<span>or</span>
 									</div>
 									
 									<!-- <div class="bk-margin-bottom-10 bk-margin-top-10 text-center">
-										<a href="<?php echo base_url()?>skin/#" class="fa fa-facebook facebook-bg"></a>
-										<a href="<?php echo base_url()?>skin/#" class="fa fa-twitter twitter-bg"></a>
-										<a href="<?php echo base_url()?>skin/#" class="fa fa-linkedin linkedin-bg"></a>
+										<a href="skin/#" class="fa fa-facebook facebook-bg"></a>
+										<a href="skin/#" class="fa fa-twitter twitter-bg"></a>
+										<a href="skin/#" class="fa fa-linkedin linkedin-bg"></a>
 									</div> -->
 									<br />
-									<p class="text-center">Don't have an account yet? <a href="<?php echo base_url()?>skin/page-register.html"><small>Register!</small></a>
+									<p class="text-center">Don't have an account yet? <a href="<?php echo base_url()?>regist"><small>Register!</small></a>
 								</form>
 							</div>
 						</div>

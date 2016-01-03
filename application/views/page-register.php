@@ -15,31 +15,32 @@
         <link href="http://fonts.useso.com/css?family=Open+Sans:300,400,600,700,800|Shadows+Into+Light" rel="stylesheet" type="text/css" />
         
 		<!-- Favicon and touch icons -->
-		<link rel="shortcut icon" href="assets/ico/favicon.ico" type="image/x-icon" />
-		<link rel="apple-touch-icon" href="assets/ico/apple-touch-icon.png" />
-		<link rel="apple-touch-icon" sizes="57x57" href="assets/ico/apple-touch-icon-57x57.png" />
-		<link rel="apple-touch-icon" sizes="72x72" href="assets/ico/apple-touch-icon-72x72.png" />
-		<link rel="apple-touch-icon" sizes="76x76" href="assets/ico/apple-touch-icon-76x76.png" />
-		<link rel="apple-touch-icon" sizes="114x114" href="assets/ico/apple-touch-icon-114x114.png" />
-		<link rel="apple-touch-icon" sizes="120x120" href="assets/ico/apple-touch-icon-120x120.png" />
-		<link rel="apple-touch-icon" sizes="144x144" href="assets/ico/apple-touch-icon-144x144.png" />
-		<link rel="apple-touch-icon" sizes="152x152" href="assets/ico/apple-touch-icon-152x152.png" />
+		<link rel="shortcut icon" href="<?php echo base_url()?>skin/assets/ico/favicon.ico" type="image/x-icon" />
+		<link rel="apple-touch-icon" href="<?php echo base_url()?>skin/assets/ico/apple-touch-icon.png" />
+		<link rel="apple-touch-icon" sizes="57x57" href="<?php echo base_url()?>skin/assets/ico/apple-touch-icon-57x57.png" />
+		<link rel="apple-touch-icon" sizes="72x72" href="<?php echo base_url()?>skin/assets/ico/apple-touch-icon-72x72.png" />
+		<link rel="apple-touch-icon" sizes="76x76" href="<?php echo base_url()?>skin/assets/ico/apple-touch-icon-76x76.png" />
+		<link rel="apple-touch-icon" sizes="114x114" href="<?php echo base_url()?>skin/assets/ico/apple-touch-icon-114x114.png" />
+		<link rel="apple-touch-icon" sizes="120x120" href="<?php echo base_url()?>skin/assets/ico/apple-touch-icon-120x120.png" />
+		<link rel="apple-touch-icon" sizes="144x144" href="<?php echo base_url()?>skin/assets/ico/apple-touch-icon-144x144.png" />
+		<link rel="apple-touch-icon" sizes="152x152" href="<?php echo base_url()?>skin/assets/ico/apple-touch-icon-152x152.png" />
 		
 	    <!-- start: CSS file-->
 		
 		<!-- Vendor CSS-->
-		<link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
-		<link href="assets/vendor/skycons/css/skycons.css" rel="stylesheet" />
-		<link href="assets/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+		<link href="<?php echo base_url()?>skin/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+		<link href="<?php echo base_url()?>skin/assets/vendor/skycons/css/skycons.css" rel="stylesheet" />
+		<link href="<?php echo base_url()?>skin/assets/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
 		
 		<!-- Plugins CSS-->		
 		
 		<!-- Theme CSS -->
-		<link href="assets/css/jquery.mmenu.css" rel="stylesheet" />
+		<link href="<?php echo base_url()?>skin/assets/css/jquery.mmenu.css" rel="stylesheet" />
 		
 		<!-- Page CSS -->		
-		<link href="assets/css/style.css" rel="stylesheet" />
-		<link href="assets/css/add-ons.min.css" rel="stylesheet" />
+		<link href="<?php echo base_url()?>skin/assets/css/style.css" rel="stylesheet" />
+		<link href="<?php echo base_url()?>skin/assets/css/add-ons.min.css" rel="stylesheet" />
+		<link href="http://cdn.bootcss.com/sweetalert/1.1.3/sweetalert.min.css" rel="stylesheet">
 		
 		<style>
 			footer {
@@ -51,7 +52,7 @@
 	    
 		
 		<!-- Head Libs -->
-		<script src="assets/plugins/modernizr/js/modernizr.js"></script>
+		<script src="<?php echo base_url()?>skin/assets/plugins/modernizr/js/modernizr.js"></script>
 		
 		<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -70,7 +71,7 @@
 				<div class="body-register">
 					<div class="center-register">
 						<a href="#" class="logo pull-left hidden-xs">
-							<img src="assets/img/logo.png" height="45" alt="NADHIF Admin" />
+							<img src="<?php echo base_url()?>skin/assets/img/logo.png" height="45" alt="NADHIF Admin" />
 						</a>
 
 						<div class="panel panel-register">
@@ -78,26 +79,26 @@
 								<h2 class="title text-uppercase"><i class="fa fa-user"></i> Register</h2>
 							</div>
 							<div class="panel-body">
-								<form>
+								<form action="/regist/reg" method="post" onsubmit="check()">
 									<div class="form-group">
 										<label>Name</label>
-										<input name="name" type="text" class="form-control" />
+										<input id="lgn" name="lgn" type="text" class="form-control" required/>
 									</div>
 
-									<div class="form-group">
+									<!-- <div class="form-group">
 										<label>E-mail Address</label>
 										<input name="email" type="email" class="form-control" />
-									</div>
+									</div> -->
 
 									<div class="form-group">
 										<div class="row">
 											<div class="col-sm-6">
 												<label>Password</label>
-												<input name="pwd" type="password" class="form-control" />
+												<input id="pwd" name="pwd" type="password" class="form-control" required/>
 											</div>
 											<div class="col-sm-6">
 												<label>Password Confirmation</label>
-												<input name="pwd_confirm" type="password" class="form-control" />
+												<input id="pwdc" name="pwdc" type="password" class="form-control" required/>
 											</div>
 										</div>
 									</div>
@@ -110,8 +111,8 @@
 											</div> -->
 										</div>
 										<div class="col-sm-4 text-right">
-											<button href="index.html" type="submit" class="btn btn-primary hidden-xs bk-margin-top-10">Register</button>
-											<button href="index.html" type="submit" class="btn btn-primary btn-block btn-lg visible-xs bk-margin-top-10">Register</button>
+											<button type="submit" class="btn btn-primary hidden-xs bk-margin-top-10">Register</button>
+											<button type="submit" class="btn btn-primary btn-block btn-lg visible-xs bk-margin-top-10">Register</button>
 										</div>
 									</div>
 
@@ -124,7 +125,7 @@
 										<a href="#" class="fa fa-twitter twitter-bg"></a>
 										<a href="#" class="fa fa-linkedin linkedin-bg"></a>
 									</div><br /> -->
-									<p class="text-center">Already have an account? <a href="page-login.html"><small>Login!</small></a>
+									<p class="text-center">Already have an account? <a href="/login"><small>Login!</small></a>
 								</form>
 							</div>
 						</div>
@@ -181,21 +182,22 @@
 		
 		<!-- start: JavaScript-->
 		
-		<!-- Vendor JS-->				
-		<script src="assets/vendor/js/jquery.min.js"></script>
-		<script src="assets/vendor/js/jquery-2.1.1.min.js"></script>
-		<script src="assets/vendor/js/jquery-migrate-1.2.1.min.js"></script>
-		<script src="assets/vendor/bootstrap/js/bootstrap.min.js"></script>
-		<script src="assets/vendor/skycons/js/skycons.js"></script>
+		<!-- Vendor JS			
+		<script src="<?php echo base_url()?>skin/assets/vendor/js/jquery.min.js"></script>-->	
+		<script src="<?php echo base_url()?>skin/assets/vendor/js/jquery-2.1.1.min.js"></script>
+		<script src="<?php echo base_url()?>skin/assets/vendor/js/jquery-migrate-1.2.1.min.js"></script>
+		<script src="<?php echo base_url()?>skin/assets/vendor/bootstrap/js/bootstrap.min.js"></script>
+		<script src="<?php echo base_url()?>skin/assets/vendor/skycons/js/skycons.js"></script>
+		<script src="http://cdn.bootcss.com/sweetalert/1.1.3/sweetalert.min.js"></script>
 		
 		<!-- Plugins JS-->
 		
 		<!-- Theme JS -->		
-		<script src="assets/js/jquery.mmenu.min.js"></script>
-		<script src="assets/js/core.min.js"></script>
+		<script src="<?php echo base_url()?>skin/assets/js/jquery.mmenu.min.js"></script>
+		<script src="<?php echo base_url()?>skin/assets/js/core.min.js"></script>
 		
 		<!-- Pages JS -->
-		<script src="assets/js/pages/page-register.js"></script>
+		<script src="<?php echo base_url()?>skin/assets/js/pages/page-register.js"></script>
 		
 		<!-- end: JavaScript-->
 		
